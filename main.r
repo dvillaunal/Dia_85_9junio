@@ -1,21 +1,17 @@
-```{r, eval=FALSE, include=TRUE}
-"Protocolo:
- 
- 1. Daniel Felipe Villa Rengifo
- 
- 2. Lenguaje: R
- 
- 3. Tema: Regresión logistica binaria: Modelos de impacto combinado
- 
- 4. Fuentes:  
-    https://dlegorreta.wordpress.com/tag/e1071/"
-```
+## ---- eval=FALSE, include=TRUE-------------------------------------------
+## "Protocolo:
+## 
+##  1. Daniel Felipe Villa Rengifo
+## 
+##  2. Lenguaje: R
+## 
+##  3. Tema: Regresión logistica binaria: Modelos de impacto combinado
+## 
+##  4. Fuentes:
+##     https://dlegorreta.wordpress.com/tag/e1071/"
 
-# Modelos de impacto combinado:
 
-En las formulaciones de modelos `glm` podemos expresar lo que se denominan impactos combinados o interacciones entre variables. Estos casos se dan cuando el efecto combinado de dos variables es muy importante y superior a la combinación lineal de ellas. Es decir el efecto es exponencial y no lineal sobre la variable a predecir.
-
-```{r}
+## ------------------------------------------------------------------------
 # Ejemplo:
 
 #Uno de los mejores predictores de donaciones futuras es el historial de donaciones anteriores y cuanto mas recientes, frecuentes y grandes mejor. En términos de comercialización, esto se conoce como R/F/M (Recency Frequency Money).
@@ -64,11 +60,9 @@ png(filename = "ROC_donors.png")
 plot(ROC, col = "red", main = "Curva ROC, de la base donors")
 
 dev.off()
-```
 
-# Optimización de un modeloS `glm`
 
-```{r}
+## ------------------------------------------------------------------------
 "Cuando a priori no sabemos qué variables tienen más dependencia para crear el modelo una forma de hacerlo es usando la regresión gradual. Esto consiste en aplicar una función que va incrementando las variables y detecta el mejor modelo de regresión.
 
 Para construirlo hacemos lo siguiente:
@@ -110,4 +104,3 @@ png(filename = "Optimizado.png")
 plot(ROC, col = "red", main = "Modelo Optimizado sobre Curvas ROC")
 
 dev.off()
-```
